@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>貪食蛇 - 64x64</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="title">
+        <h1>貪食蛇 (64x64)</h1>
+      </header>
+
+      <main class="main">
+        <div class="gameArea">
+          <canvas id="board" width="640" height="640" aria-label="貪食蛇遊戲棋盤"></canvas>
+
+          <div id="overlay" class="overlay" role="dialog" aria-modal="true">
+            <div class="overlayCard">
+              <h2 id="overlayTitle">準備開始</h2>
+              <p class="hint">
+                使用 <b>WASD</b> 或 <b>方向鍵</b> 控制方向。<br />
+                貪食蛇撞到邊緣或自己身體會結束。
+              </p>
+              <div class="statsPreview">
+                <div>每吃 5 個食物會逐漸加速</div>
+              </div>
+              <button id="btnStart" class="btn">開始遊戲</button>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hud" aria-label="遊戲狀態">
+          <div class="hudRow">
+            <span>時間</span>
+            <span id="timeText" class="mono">0.00 s</span>
+          </div>
+          <div class="hudRow">
+            <span>成功吃到</span>
+            <span id="scoreText" class="mono">0 個</span>
+          </div>
+          <div class="hudRow">
+            <span>速度</span>
+            <span id="speedText" class="mono">1.00x</span>
+          </div>
+          <div class="footerHint">
+            提示：不要立刻反向，否則會直接撞到自己。
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./script.js" defer></script>
+  </body>
+</html>
+
